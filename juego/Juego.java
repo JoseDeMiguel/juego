@@ -18,10 +18,10 @@ public class Juego extends Canvas implements Runnable {
 
 	// Utilizamos un final para definir un valor que no va a cambiar nunca (En
 	// mayusculas por convenio)
-	private static final int ANCHO = 800;
-	private static final int ALTO = 600;
+	private static final int ancho = 800;
+	private static final int alto = 600;
 
-	private static final String NOMBRE = "Juego";
+	private static final String nombre = "Juego";
 
 	// Creamos las variables para mostrar los aps y fps
 	private static int aps = 0;
@@ -42,14 +42,14 @@ public class Juego extends Canvas implements Runnable {
 	private static Teclado teclado; // Metemos la clase teclado
 
 	private Juego() {
-		setPreferredSize(new Dimension(ANCHO, ALTO));
+		setPreferredSize(new Dimension(ancho, alto));
 
 		teclado = new Teclado();
 		// Esto hace que detecte toda tecla que se pulse en esta clase
 		addKeyListener(teclado);
 
 		// Iniciamos el objecto ventana (utilizando JFrame) y le ponemos el nombre
-		ventana = new JFrame(NOMBRE);
+		ventana = new JFrame(nombre);
 		// Hacemos que al cerrar la ventana se cierre la aplicación
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// Hacemos que el usuario no pueda cambiar el tamaño de la ventana
@@ -183,7 +183,7 @@ public class Juego extends Canvas implements Runnable {
 			// si es mas de 1 segundo hará una actualización
 			if (System.nanoTime() - referenciaContador > NS_POR_SEGUNDO) {
 				// Escribimos en la cabecera de la ventana los fps
-				ventana.setTitle(NOMBRE + " || APS: " + aps + " || FPS: " + fps);
+				ventana.setTitle(nombre + " || APS: " + aps + " || FPS: " + fps);
 				// Reiniciamos las variables
 				aps = 0;
 				fps = 0;
